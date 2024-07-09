@@ -1,89 +1,99 @@
-# CNN Explainer
+<div class="Box-sc-g0xbh4-0 bJMeLZ js-snippet-clipboard-copy-unpositioned" data-hpc="true"><article class="markdown-body entry-content container-lg" itemprop="text"><div class="markdown-heading" dir="auto"><h1 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">CNN 解释者</font></font></h1><a id="user-content-cnn-explainer" class="anchor" aria-label="永久链接：CNN 解释器" href="#cnn-explainer"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">旨在帮助非专家了解卷积神经网络 (CNN) 的交互式可视化系统</font></font></p>
+<p dir="auto"><a href="https://github.com/poloclub/cnn-explainer/actions"><img src="https://github.com/poloclub/cnn-explainer/workflows/build/badge.svg" alt="建造" style="max-width: 100%;"></a>
+<a href="http://arxiv.org/abs/2004.15004" rel="nofollow"><img src="https://camo.githubusercontent.com/948cd732683179ea4a04871449e3ced869afc85bd44128f6641bfdd220a4b126/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f61725869762d323030342e31353030342d726564" alt="arxiv 徽章" data-canonical-src="https://img.shields.io/badge/arXiv-2004.15004-red" style="max-width: 100%;"></a>
+<a href="https://doi.org/10.1109/TVCG.2020.3030418" rel="nofollow"><img src="https://camo.githubusercontent.com/1d47db55bc7dad1e12fb9b7aa449eac890373503f175fa030971df9122d916ca/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f444f492d31302e313130392f545643472e323032302e333033303431382d626c7565" alt="DOI:10.1109/TVCG.2020.3030418" data-canonical-src="https://img.shields.io/badge/DOI-10.1109/TVCG.2020.3030418-blue" style="max-width: 100%;"></a></p>
+<p dir="auto"><a href="https://youtu.be/HnWIHWFbuUQ" rel="nofollow"><img src="https://camo.githubusercontent.com/fa87ac3d0106779f35a63d2142cbb8ea3e18b0f57426b548941167851426e6dd/68747470733a2f2f692e696d6775722e636f6d2f734373756456672e706e67" data-canonical-src="https://i.imgur.com/sCsudVg.png" style="max-width: 100%;"></a></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">欲了解更多信息，请查看我们的手稿：</font></font></p>
+<p dir="auto"><a href="https://arxiv.org/abs/2004.15004" rel="nofollow"><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">CNN 解释器：通过交互式可视化学习卷积神经网络</font></font></strong></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。Wang, Zijie J.、Robert Turko、Omar Shaikh、Haekyu Park、Nilaksh Das、Fred Hohman、Minsuk Kahng 和 Duen Horng Chau。IEEE
+</font></font><em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">可视化与计算机图形学学报 (TVCG)，2020 年。</font></font></em></p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">现场演示</font></font></h2><a id="user-content-live-demo" class="anchor" aria-label="永久链接：现场演示" href="#live-demo"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">如需现场演示，请访问：</font></font><a href="http://poloclub.github.io/cnn-explainer/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">http://poloclub.github.io/cnn-explainer/</font></font></a></p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">本地运行</font></font></h2><a id="user-content-running-locally" class="anchor" aria-label="永久链接：本地运行" href="#running-locally"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">克隆或下载此存储库：</font></font></p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto"><pre>git clone git@github.com:poloclub/cnn-explainer.git
 
-An interactive visualization system designed to help non-experts learn about Convolutional Neural Networks (CNNs)
-
-[![build](https://github.com/poloclub/cnn-explainer/workflows/build/badge.svg)](https://github.com/poloclub/cnn-explainer/actions)
-[![arxiv badge](https://img.shields.io/badge/arXiv-2004.15004-red)](http://arxiv.org/abs/2004.15004)
-[![DOI:10.1109/TVCG.2020.3030418](https://img.shields.io/badge/DOI-10.1109/TVCG.2020.3030418-blue)](https://doi.org/10.1109/TVCG.2020.3030418)
-
-<a href="https://youtu.be/HnWIHWFbuUQ" target="_blank"><img src="https://i.imgur.com/sCsudVg.png" style="max-width:100%;"></a>
-
-For more information, check out our manuscript:
-
-[**CNN Explainer: Learning Convolutional Neural Networks with Interactive Visualization**](https://arxiv.org/abs/2004.15004).
-Wang, Zijie J., Robert Turko, Omar Shaikh, Haekyu Park, Nilaksh Das, Fred Hohman, Minsuk Kahng, and Duen Horng Chau.
-*IEEE Transactions on Visualization and Computer Graphics (TVCG), 2020.*
-
-## Live Demo
-
-For a live demo, visit: http://poloclub.github.io/cnn-explainer/
-
-## Running Locally
-
-Clone or download this repository:
-
-```bash
-git clone git@github.com:poloclub/cnn-explainer.git
+<span class="pl-c"><span class="pl-c">#</span> use degit if you don't want to download commit histories</span>
+degit poloclub/cnn-explainer</pre><div class="zeroclipboard-container">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 tooltipped-no-delay d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="git clone git@github.com:poloclub/cnn-explainer.git
 
 # use degit if you don't want to download commit histories
-degit poloclub/cnn-explainer
-```
-
-Install the dependencies:
-
-```bash
-npm install
-```
-
-Then run CNN Explainer:
-
-```bash
-npm run dev
-```
-
-Navigate to [localhost:3000](https://localhost:3000). You should see CNN Explainer running in your broswer :)
-
-To see how we trained the CNN, visit the directory [`./tiny-vgg/`](tiny-vgg).
-If you want to use CNN Explainer with your own CNN model or image classes, see [#8](/../../issues/8) and [#14](/../../issues/14).
-
-## Credits
-
-CNN Explainer was created by
-<a href="https://zijie.wang/">Jay Wang</a>,
-<a href="https://www.linkedin.com/in/robert-turko/">Robert Turko</a>,
-<a href="http://oshaikh.com/">Omar Shaikh</a>,
-<a href="https://haekyu.com/">Haekyu Park</a>,
-<a href="http://nilakshdas.com/">Nilaksh Das</a>,
-<a href="https://fredhohman.com/">Fred Hohman</a>,
-<a href="http://minsuk.com">Minsuk Kahng</a>, and
-<a href="https://www.cc.gatech.edu/~dchau/">Polo Chau</a>,
-which was the result of a research collaboration between
-Georgia Tech and Oregon State.
-
-We thank
-[Anmol Chhabria](https://www.linkedin.com/in/anmolchhabria),
-[Kaan Sancak](https://kaansancak.com),
-[Kantwon Rogers](https://www.kantwon.com), and the
-[Georgia Tech Visualization Lab](http://vis.gatech.edu)
-for their support and constructive feedback.
-
-## Citation
-
-```bibTeX
-@article{wangCNNExplainerLearning2020,
+degit poloclub/cnn-explainer" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
+    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
+    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">安装依赖项：</font></font></p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto"><pre>npm install</pre><div class="zeroclipboard-container">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 tooltipped-no-delay d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="npm install" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
+    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
+    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">然后运行 &ZeroWidthSpace;&ZeroWidthSpace;CNN Explainer：</font></font></p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto"><pre>npm run dev</pre><div class="zeroclipboard-container">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 tooltipped-no-delay d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="npm run dev" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
+    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
+    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">导航到</font></font><a href="https://localhost:3000" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">localhost:3000</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。你应该看到 CNN Explainer 在你的浏览器中运行 :)</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">要了解我们如何训练 CNN，请访问目录</font></font><a href="/poloclub/cnn-explainer/blob/master/tiny-vgg"><code>./tiny-vgg/</code></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。如果您想将 CNN Explainer 与自己的 CNN 模型或图像类别一起使用，请参阅</font></font><a href="/poloclub/cnn-explainer/issues/8"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">#8</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">和</font></font><a href="/poloclub/cnn-explainer/issues/14"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">#14</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。</font></font></p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">致谢</font></font></h2><a id="user-content-credits" class="anchor" aria-label="永久链接：致谢" href="#credits"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"></font><a href="https://zijie.wang/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">CNN Explainer 由Jay Wang</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">、
+ </font></font><a href="https://www.linkedin.com/in/robert-turko/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Robert Turko</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">、
+ </font></font><a href="http://oshaikh.com/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Omar Shaikh</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">、
+ </font></font><a href="https://haekyu.com/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Haekyu Park</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">、
+ </font></font><a href="http://nilakshdas.com/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Nilaksh Das</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">、
+ </font></font><a href="https://fredhohman.com/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Fred Hohman</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">、
+ </font></font><a href="http://minsuk.com" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Minsuk Kahng</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">和
+</font></font><a href="https://www.cc.gatech.edu/~dchau/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Polo Chau</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">创建
+</font><font style="vertical-align: inherit;">，是佐治亚理工学院和俄勒冈州立大学合作研究的成果。</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">我们感谢
+</font></font><a href="https://www.linkedin.com/in/anmolchhabria" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Anmol Chhabria</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">、
+ </font></font><a href="https://kaansancak.com" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Kaan Sancak</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">、
+ </font></font><a href="https://www.kantwon.com" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Kantwon Rogers</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">和
+</font></font><a href="http://vis.gatech.edu" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">佐治亚理工学院可视化实验室</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+的支持和建设性反馈。</font></font></p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">引用</font></font></h2><a id="user-content-citation" class="anchor" aria-label="永久链接：引用" href="#citation"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<div class="highlight highlight-text-bibtex notranslate position-relative overflow-auto" dir="auto"><pre><span class="pl-k">@article</span>{<span class="pl-en">wangCNNExplainerLearning2020</span>,
+  <span class="pl-s">title</span> = <span class="pl-s"><span class="pl-pds">{</span>{{CNN Explainer}}: {{Learning Convolutional Neural Networks}} with {{Interactive Visualization}}<span class="pl-pds">}</span></span>,
+  <span class="pl-s">shorttitle</span> = <span class="pl-s"><span class="pl-pds">{</span>{{CNN Explainer}}<span class="pl-pds">}</span></span>,
+  <span class="pl-s">author</span> = <span class="pl-s"><span class="pl-pds">{</span>Wang, Zijie J. and Turko, Robert and Shaikh, Omar and Park, Haekyu and Das, Nilaksh and Hohman, Fred and Kahng, Minsuk and Chau, Duen Horng<span class="pl-pds">}</span></span>,
+  <span class="pl-s">journal</span>=<span class="pl-s"><span class="pl-pds">{</span>IEEE Transactions on Visualization and Computer Graphics (TVCG)<span class="pl-pds">}</span></span>,
+  <span class="pl-s">year</span>=<span class="pl-s"><span class="pl-pds">{</span>2020<span class="pl-pds">}</span></span>,
+  <span class="pl-s">publisher</span>=<span class="pl-s"><span class="pl-pds">{</span>IEEE<span class="pl-pds">}</span></span>
+}</pre><div class="zeroclipboard-container">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 tooltipped-no-delay d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="@article{wangCNNExplainerLearning2020,
   title = {{{CNN Explainer}}: {{Learning Convolutional Neural Networks}} with {{Interactive Visualization}}},
   shorttitle = {{{CNN Explainer}}},
   author = {Wang, Zijie J. and Turko, Robert and Shaikh, Omar and Park, Haekyu and Das, Nilaksh and Hohman, Fred and Kahng, Minsuk and Chau, Duen Horng},
   journal={IEEE Transactions on Visualization and Computer Graphics (TVCG)},
   year={2020},
   publisher={IEEE}
-}
-```
-
-## License
-
-The software is available under the [MIT License](https://github.com/poloclub/cnn-explainer/blob/master/LICENSE).
-
-## Contact
-
-If you have any questions, feel free to [open an issue](https://github.com/poloclub/cnn-explainer/issues/new/choose) or contact [Jay Wang](https://zijie.wang).
+}" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
+    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
+    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">执照</font></font></h2><a id="user-content-license" class="anchor" aria-label="永久链接：许可证" href="#license"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"></font><a href="https://github.com/poloclub/cnn-explainer/blob/master/LICENSE"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">该软件在MIT 许可</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">下可用</font><font style="vertical-align: inherit;">。</font></font></p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">接触</font></font></h2><a id="user-content-contact" class="anchor" aria-label="永久链接：联系方式" href="#contact"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">如果你有任何疑问，请随时</font></font><a href="https://github.com/poloclub/cnn-explainer/issues/new/choose"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">打开问题</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">或联系</font></font><a href="https://zijie.wang" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Jay Wang</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。</font></font></p>
+</article></div>
